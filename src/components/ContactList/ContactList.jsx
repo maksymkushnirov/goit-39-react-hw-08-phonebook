@@ -5,6 +5,8 @@ import {
   useDeleteContactMutation,
   useFetchContactsQuery,
 } from 'redux/apiSlice';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ContactList = () => {
   const { data = [] } = useFetchContactsQuery();
@@ -20,13 +22,13 @@ const ContactList = () => {
 
   return (
     <div className={styles.contactItem}>
-      {getFilterContacts().map(({ id, phone, name }) => {
+      {getFilterContacts().map(({ id, number, name }) => {
         return (
           <li key={id}>
-            {name}: {phone}
-            <button className={styles.button} onClick={() => deleteContact(id)}>
+            {name}: {number}
+            <Button className={styles.button} onClick={() => deleteContact(id)}>
               Delete
-            </button>
+            </Button>
           </li>
         );
       })}

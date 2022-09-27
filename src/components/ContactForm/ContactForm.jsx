@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 import { useAddContactMutation, useFetchContactsQuery } from 'redux/apiSlice';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -55,7 +57,7 @@ const ContactForm = () => {
           value={name}
           onChange={handleChange}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          title="Cyrillic / Latin uppercase / lowercase letters, apostrophes, hyphens and spaces"
           required
         />
       </label>
@@ -68,13 +70,13 @@ const ContactForm = () => {
           value={number}
           onChange={handleChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          title="digits, spaces, dashes, parentheses and +"
           required
         />
       </label>
-      <button className={styles.button} type="submit">
+      <Button className={styles.button} type="submit">
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };
