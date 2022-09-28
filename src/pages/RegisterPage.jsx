@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/authOperations';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const styles = {
   form: {
@@ -47,7 +49,7 @@ export default function RegisterPage() {
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
         <label style={styles.label}>
           Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          <input type="text" name="name" value={name} autoComplete="off" onChange={handleChange} />
         </label>
 
         <label style={styles.label}>
@@ -56,6 +58,7 @@ export default function RegisterPage() {
             type="email"
             name="email"
             value={email}
+            autoComplete="off"
             onChange={handleChange}
           />
         </label>
@@ -66,11 +69,12 @@ export default function RegisterPage() {
             type="password"
             name="password"
             value={password}
+            autoComplete="off"
             onChange={handleChange}
           />
         </label>
 
-        <button type="submit">Sign up</button>
+        <Button type="submit">Sign up</Button>
       </form>
     </div>
   );

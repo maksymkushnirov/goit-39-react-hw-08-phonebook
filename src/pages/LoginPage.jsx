@@ -49,6 +49,7 @@ export default function LoginPage() {
             type="email"
             name="email"
             value={email}
+            autoComplete="off"
             onChange={handleChange}
           />
         </label>
@@ -59,6 +60,7 @@ export default function LoginPage() {
             type="password"
             name="password"
             value={password}
+            autoComplete="off"
             onChange={handleChange}
           />
         </label>

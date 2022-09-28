@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './AuthNav.module.css';
 
 const activeLink = {
-  color: 'rgb(255, 69, 0)',
+  color: 'rgb(0, 128, 0)',
 };
 
 export default function AuthNav() {

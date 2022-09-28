@@ -5,7 +5,7 @@ import authSelectors from 'redux/auth/authSelectors';
 import styles from './Navigation.module.css';
 
 const activeLink = {
-  color: 'rgb(255, 69, 0)',
+  color: 'rgb(0, 100, 0)',
 };
 
 const Navigation = () => {
