@@ -1,15 +1,15 @@
 import { useEffect, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AppBar from './AppBar';
+import AppBar from './AppBar/AppBar';
 import Container from './Container/Container';
 import PrivateRoute from './PrivatRoute';
 import PublicRoute from './PublicRoute';
 import { Routes, Route } from 'react-router-dom';
 
-import HomePage from 'pages/HomePage';
-import ContactsPage from 'pages/ContactsPage';
-import RegisterPage from 'pages/RegisterPage';
-import LoginPage from 'pages/LoginPage';
+import HomePage from 'pages/HomePage/HomePage';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import LoginPage from 'pages/LoginPage/LoginPage';
 
 import authSelectors from 'redux/auth/authSelectors';
 import authOperations from 'redux/auth/authOperations';

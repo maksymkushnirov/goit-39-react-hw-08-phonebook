@@ -3,17 +3,7 @@ import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/authOperations';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import styles from './RegisterPage.module.css';
 
 export default function RegisterPage() {
   const dispatch = useDispatch();
@@ -46,13 +36,20 @@ export default function RegisterPage() {
     <div>
       <h1>Registration</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+      <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
+        <label className={styles.label}>
           Name
-          <input type="text" name="name" value={name} autoComplete="off" onChange={handleChange} />
+          <input
+            type="text"
+            name="name"
+            value={name}
+            autoComplete="off"
+            onChange={handleChange}
+            required
+          />
         </label>
 
-        <label style={styles.label}>
+        <label className={styles.label}>
           Email
           <input
             type="email"
@@ -60,10 +57,11 @@ export default function RegisterPage() {
             value={email}
             autoComplete="off"
             onChange={handleChange}
+            required
           />
         </label>
 
-        <label style={styles.label}>
+        <label className={styles.label}>
           Password
           <input
             type="password"
@@ -71,6 +69,7 @@ export default function RegisterPage() {
             value={password}
             autoComplete="off"
             onChange={handleChange}
+            required
           />
         </label>
 

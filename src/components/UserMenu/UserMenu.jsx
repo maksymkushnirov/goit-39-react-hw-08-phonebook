@@ -3,26 +3,15 @@ import authSelectors from 'redux/auth/authSelectors';
 import authOperations from 'redux/auth/authOperations';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  name: {
-    fontWeight: 500,
-    fontSize: 20,
-    marginRight: 12,
-  },
-};
+import styles from './UserMenu.module.css';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUsername);
+  const name = useSelector(authSelectors.getUserName);
 
   return (
-    <div style={styles.container}>
-      <span style={styles.name}>Welcome, {name}</span>
+    <div className={styles.container}>
+      <span className={styles.name}>Welcome, {name}</span>
       <Button
         variant="primary"
         type="button"
